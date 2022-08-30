@@ -1,0 +1,46 @@
+{
+  "name": "@ably-labs/graphql-ably-pubsub",
+  "version": "1.0.0",
+  "description": "GraphQL Subscriptions using Ably PubSub",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "tsc && node dist/example.js",
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ably": "^1.2.29",
+    "graphql-subscriptions": "^1.2.1"
+  },
+  "devDependencies": {
+    "@graphql-tools/schema": "^7.1.5",
+    "typescript": "^4.5.5",
+    "dotenv": "^16.0.1",    
+    "apollo-server-core": "^3.6.2",
+    "apollo-server-express": "^3.6.2",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1"  
+  },
+  "author": "Ably Labs, Jo Franchetti",
+  "keywords": [
+    "GraphQL",
+    "Apollo",
+    "Apollo Server",
+    "GraphQL Subscriptions",
+    "ably",
+    "ably-pubsub"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ably-labs/graphql-ably-pubsub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ably-labs/graphql-ably-pubsub/issues"
+  },
+  "homepage": "https://github.com/ably-labs/graphql-ably-pubsub#readme"
+}
