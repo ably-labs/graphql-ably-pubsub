@@ -37,7 +37,23 @@ You can run a full example by running
 npm run start
 ```
 
-But the more important parts of the example are shown here
+Open up the Apollo GraphQL studio in your web browser (http://localhost:4000/graphql) and click the "Query your server" button. Then, update the ExampleQuery to be the following:
+
+```
+query ExampleQuery {
+  currentNumber
+}
+```
+
+And run the query. Re-run the query and you'll see the `currentNumber` value changing.
+
+![Apollo GraphQL studio showing example query](docs/apollographql-query.png)
+
+To see the updates in realtime, go to the Ably dashboard and select the Ably application you've used for the GraphQL example and select the "Dev console" tab. Attach to the channel `NUMBER_INCREMENTED` and you'll see the updates coming in as new events are triggered on that channel via the GraphQL subscription.
+
+![Ably Dev console showing realtime channel updates](docs/ably-dev-console.png)
+
+But the more important parts of the example are shown here:
 
 ```js
 import AblyPubSub from "./index.js"; 
