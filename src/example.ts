@@ -73,5 +73,6 @@ function incrementNumber() {
   pubsub.publish("NUMBER_INCREMENTED", { numberIncremented: currentNumber });
   setTimeout(incrementNumber, 1000);
 }
+
 // Start incrementing
 incrementNumber();
