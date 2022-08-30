@@ -53,7 +53,7 @@ To see the updates in realtime, go to the Ably dashboard and select the Ably app
 
 ![Ably Dev console showing realtime channel updates](docs/ably-dev-console.png)
 
-But the more important parts of the example are shown here:
+The important parts of the example are shown here:
 
 ```js
 import AblyPubSub from "./index.js"; 
