@@ -1,6 +1,6 @@
 {
   "name": "@ably-labs/graphql-ably-pubsub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GraphQL Subscriptions using Ably PubSub",
   "type": "module",
   "main": "dist/index.js",
@@ -24,7 +24,9 @@
     "apollo-server-core": "^3.6.2",
     "apollo-server-express": "^3.6.2",
     "express": "^4.17.1",
-    "graphql": "^15.5.1"  
+    "graphql": "^15.5.1",    
+    "graphql-ws": "^5.10.1",
+    "ws": "^8.8.1"
   },
   "author": "Ably Labs, Jo Franchetti",
   "keywords": [

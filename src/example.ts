@@ -4,6 +4,8 @@ import { createServer } from "http";
 import { ApolloServer, gql } from "apollo-server-express";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import { WebSocketServer } from "ws";
+import { useServer } from "graphql-ws/lib/use/ws";
 import AblyPubSub from "./index.js";
 
 dotenv.config();
@@ -45,13 +47,33 @@ const schema = makeExecutableSchema({ typeDefs, resolvers });
 const app = express();
 const httpServer = createServer(app);
 
+// Set up WebSocket server.
+const wsServer = new WebSocketServer({
+  server: httpServer,
+  path: "/graphql",
+});
+const serverCleanup = useServer({ schema }, wsServer);
+
 // Set up ApolloServer.
 const server = new ApolloServer({
   schema,
   plugins: [
-    ApolloServerPluginDrainHttpServer({ httpServer })    
+    // Proper shutdown for the HTTP server.
+    ApolloServerPluginDrainHttpServer({ httpServer }),
+
+    // Proper shutdown for the WebSocket server.
+    {
+      async serverWillStart() {
+        return {
+          async drainServer() {
+            await serverCleanup.dispose();
+          },
+        };
+      },
+    },
   ],
 });
+
 await server.start();
 server.applyMiddleware({ app });
 
