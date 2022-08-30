@@ -27,7 +27,7 @@ echo ABLY_API_KEY=YOUR-API-KEY-HERE > .env
 ## Installation
 
 ```bash
-npm install --save @ably/graphql-ably-pubsub
+npm install --save @ably-labs/graphql-ably-pubsub
 ```
 
 ## Usage
