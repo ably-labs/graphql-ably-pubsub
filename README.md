@@ -20,7 +20,6 @@ You need to create a `.env` file in the root with a variable defined called `ABL
 You can do this from the command line if you like:
 
 ```bash
-cd api
 echo ABLY_API_KEY=YOUR-API-KEY-HERE > .env
 ```
 
