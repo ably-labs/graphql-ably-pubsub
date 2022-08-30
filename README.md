@@ -1,8 +1,28 @@
 # GraphQL Ably PubSub
 
-This is an Ably implementation of the `PubSubEngine` base-class to enable [Subscriptions](https://www.apollographql.com/docs/apollo-server/data/subscriptions) in Apollo Server. This implementation uses Ably as the message transport for the WebSocket portion of Apollo Subscriptions, allowing you to use the feature without managing and maintaining your own WebSocket Server.
+This is an [Ably](https://ably.com) implementation of the `PubSubEngine` base-class to enable [Subscriptions](https://www.apollographql.com/docs/apollo-server/data/subscriptions) in Apollo Server. This implementation uses Ably as the message transport for the WebSocket portion of Apollo Subscriptions, allowing you to use the feature without managing and maintaining your own WebSocket Server.
 
 Please consult the [Apollo Server documentation](https://www.apollographql.com/docs/apollo-server/data/subscriptions) for more information on how to use this feature.
+
+## Pre-Requirements
+In order to run use the AblyPubSub class, you will need an Ably API key. If you are not already signed up, you can [sign up now for a free Ably account](https://www.ably.com/signup). Once you have an Ably account:
+
+1. Log into your app dashboard.
+2. Under **“Your apps”**, click on **“Manage app”** for any app you wish to use for this tutorial, or create a new one with the “Create New App” button.
+3. Click on the **“API Keys”** tab.
+4. Copy the secret **“API Key”** value from your Root key, we will use this to configure our app.
+
+### Configuring your Ably API keys
+
+#### For local development
+
+You need to create a `.env` file in the root with a variable defined called `ABLY_API_KEY` to store your secret.
+You can do this from the command line if you like:
+
+```bash
+cd api
+echo ABLY_API_KEY=YOUR-API-KEY-HERE > .env
+```
 
 ## Installation
 
@@ -56,6 +76,12 @@ function incrementNumber() {
 // Start incrementing
 incrementNumber();
 ```
+
+## About Ably
+
+Ably makes it simple for developers to build live experiences for millions of people. Our platform provides a highly available, massively scalable, low latency, globally distributed WebSockets infrastructure - at the call of an API. 
+
+We provide serverless pub/sub messaging with unique data integrity guarantees, delivered at the edge over WebSockets. Our highly reliable, elastic infrastructure was specifically designed for building high-scale realtime web and mobile applications. We free engineers to focus on building core functionality, rather than having to provision and maintain WebSocket servers and cloud infrastructure. 
 
 ## Example
 
