@@ -1,6 +1,6 @@
 {
   "name": "@ably-labs/graphql-ably-pubsub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GraphQL Subscriptions using Ably PubSub",
   "type": "module",
   "main": "dist/index.js",
