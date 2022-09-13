@@ -1,6 +1,6 @@
 # GraphQL Ably PubSub
 
-This is an [Ably](https://ably.com) implementation of the `PubSubEngine` base-class to enable [Subscriptions](https://www.apollographql.com/docs/apollo-server/data/subscriptions) in Apollo Server. This implementation uses Ably as the message transport for the WebSocket portion of Apollo Subscriptions, allowing you to use the feature without managing and maintaining your own WebSocket Server.
+This is an [Ably](https://ably.com) implementation of the `PubSubEngine` base-class to enable [Subscriptions](https://www.apollographql.com/docs/apollo-server/data/subscriptions) in Apollo Server. It allows you to connect your subscriptions manager to an Ably-based Pub Sub mechanism to support multiple subscription manager instances for horizontally-scalable subscriptions support.
 
 Please consult the [Apollo Server documentation](https://www.apollographql.com/docs/apollo-server/data/subscriptions) for more information on how to use this feature.
 
